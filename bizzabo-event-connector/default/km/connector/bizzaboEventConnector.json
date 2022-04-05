@@ -1,0 +1,252 @@
+{
+  "$id": "bizzaboEventConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Bizzabo Event Connector",
+  "entityType": "event",
+  "source": {
+    "sourceConfig": {
+      "nativeSourceConfig": {
+        "source": "bizzabo",
+        "operation": "fetchEvents",
+        "inputs": {
+          "apiKey": "${{km/connector.bizzaboEventConnector.apiKey}}"
+        }
+      }
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "attendanceType",
+        "path": "attendanceType"
+      },
+      {
+        "type": "JSON",
+        "header": "coverPhotoUrl",
+        "path": "coverPhotoUrl"
+      },
+      {
+        "type": "JSON",
+        "header": "headerLogoUrl",
+        "path": "headerLogoUrl"
+      },
+      {
+        "type": "JSON",
+        "header": "supportEmail",
+        "path": "supportEmail"
+      },
+      {
+        "type": "JSON",
+        "header": "startDate",
+        "path": "startDate"
+      },
+      {
+        "type": "JSON",
+        "header": "endDate",
+        "path": "endDate"
+      },
+      {
+        "type": "JSON",
+        "header": "timezone",
+        "path": "timezone"
+      },
+      {
+        "type": "JSON",
+        "header": "created",
+        "path": "created"
+      },
+      {
+        "type": "JSON",
+        "header": "websiteUrl",
+        "path": "websiteUrl"
+      },
+      {
+        "type": "JSON",
+        "header": "modified",
+        "path": "modified"
+      },
+      {
+        "type": "JSON",
+        "header": "status",
+        "path": "status"
+      },
+      {
+        "type": "JSON",
+        "header": "name",
+        "path": "name"
+      },
+      {
+        "type": "JSON",
+        "header": "type",
+        "path": "type"
+      },
+      {
+        "type": "JSON",
+        "header": "id",
+        "path": "id"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "filterRows": {
+        "action": "KEEP",
+        "combinator": "AND",
+        "rules": [
+          {
+            "columnHeader": "status",
+            "conditional": "EQUALS",
+            "conditionalInput": "published"
+          }
+        ]
+      }
+    },
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "attendanceType"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": "inPerson",
+            "ignoreCase": false
+          }
+        },
+        "replacement": "In_Person"
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "startDate",
+            "endDate"
+          ]
+        },
+        "plugin": "formatDatesTimes",
+        "function": "formatDateTimes"
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "created",
+            "modified"
+          ]
+        },
+        "plugin": "formatDatesTimes",
+        "function": "formatDateOnly"
+      }
+    },
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "type"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": " ",
+            "ignoreCase": false
+          }
+        },
+        "replacement": "_"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "bizzabo_coverPhoto",
+      "header": "coverPhotoUrl",
+      "subfieldPath": [
+        {
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "field": "time",
+      "header": "endDate",
+      "subfieldPath": [
+        {
+          "name": "end"
+        }
+      ]
+    },
+    {
+      "field": "timezone",
+      "header": "timezone",
+      "subfieldPath": []
+    },
+    {
+      "field": "bizzabo_headerLogo",
+      "header": "headerLogoUrl",
+      "subfieldPath": [
+        {
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "field": "bizzabo_createdDate",
+      "header": "created",
+      "subfieldPath": []
+    },
+    {
+      "field": "bizzabo_attendanceType",
+      "header": "attendanceType",
+      "subfieldPath": []
+    },
+    {
+      "field": "organizerEmail",
+      "header": "supportEmail",
+      "subfieldPath": []
+    },
+    {
+      "field": "websiteUrl",
+      "header": "websiteUrl",
+      "subfieldPath": [
+        {
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "field": "name",
+      "header": "name",
+      "subfieldPath": []
+    },
+    {
+      "field": "bizzabo_lastModifiedDate",
+      "header": "modified",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "id",
+      "subfieldPath": []
+    },
+    {
+      "field": "time",
+      "header": "startDate",
+      "subfieldPath": [
+        {
+          "name": "start"
+        }
+      ]
+    },
+    {
+      "field": "bizzabo_status",
+      "header": "status",
+      "subfieldPath": []
+    },
+    {
+      "field": "bizzabo_eventCategory",
+      "header": "type",
+      "subfieldPath": []
+    }
+  ]
+}
