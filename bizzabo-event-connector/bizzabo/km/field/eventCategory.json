@@ -1,0 +1,55 @@
+{
+  "$id": "bizzabo_eventCategory",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Event Category",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "option",
+      "type": {
+        "optionType": {
+          "option": [
+            {
+              "displayName": "Conference \u0026 Convention",
+              "textValue": "CONFERENCE_\u0026_CONVENTION"
+            },
+            {
+              "displayName": "Trade Show \u0026 Expo",
+              "textValue": "TRADE_SHOW_\u0026_EXPO"
+            },
+            {
+              "displayName": "Internal Event",
+              "textValue": "INTERNAL_EVENT"
+            },
+            {
+              "displayName": "Meeting \u0026 Networking",
+              "textValue": "MEETING_\u0026_NETWORKING"
+            },
+            {
+              "displayName": "Webinar",
+              "textValue": "WEBINAR"
+            },
+            {
+              "displayName": "Fundraiser \u0026 Gala",
+              "textValue": "FUNDRAISER_\u0026_GALA"
+            },
+            {
+              "displayName": "Class \u0026 Workshop",
+              "textValue": "CLASS_\u0026_WORKSHOP"
+            },
+            {
+              "displayName": "Launch Event",
+              "textValue": "LAUNCH_EVENT"
+            },
+            {
+              "displayName": "Social Gathering",
+              "textValue": "SOCIAL_GATHERING"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}
