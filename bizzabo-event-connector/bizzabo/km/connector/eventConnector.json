@@ -224,5 +224,14 @@
       "header": "type",
       "subfieldPath": []
     }
-  ]
+  ],
+  "scheduleConfig": {
+    "customSchedule": {
+      "timeZone": "Atlantic/Reykjavik",
+      "startDate": "2022-04-05",
+      "startTime": "00:00",
+      "frequencyType": "DAILY"
+    },
+    "runMode": "COMPREHENSIVE"
+  }
 }
