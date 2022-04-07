@@ -9,7 +9,7 @@
         "source": "bizzabo",
         "operation": "fetchEvents",
         "inputs": {
-          "apiKey": "${{km/connector.bizzabo_eventConnector.apiKey}}"
+          "apiKey": "${{apiKey}}"
         }
       }
     },
