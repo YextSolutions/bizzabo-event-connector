@@ -131,6 +131,30 @@
         },
         "replacement": "_"
       }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "startDate",
+            "endDate"
+          ]
+        },
+        "plugin": "bizzabo_formatDatesTimes",
+        "function": "formatDateTimes"
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "created",
+            "modified"
+          ]
+        },
+        "plugin": "bizzabo_formatDatesTimes",
+        "function": "formatDateOnly"
+      }
     }
   ],
   "mappings": [
