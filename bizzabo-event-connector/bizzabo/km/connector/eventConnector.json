@@ -251,7 +251,7 @@
   ],
   "scheduleConfig": {
     "customSchedule": {
-      "timeZone": "Atlantic/Reykjavik",
+      "timeZone": "America/New_York",
       "startDate": "2022-04-05",
       "startTime": "00:00",
       "frequencyType": "DAILY"
