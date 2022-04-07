@@ -9,7 +9,7 @@
         "source": "bizzabo",
         "operation": "fetchEvents",
         "inputs": {
-          "apiKey": "${{apiKey}}"
+          "apiKey": "${{API_Key}}"
         }
       }
     },
