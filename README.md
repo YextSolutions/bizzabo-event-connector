@@ -31,7 +31,7 @@ To use this template you will need to have the following before you install:
 
 If you are an existing Yext customer, you can install the Bizzabo Event Connector here <https://www.yext.com/s/me/apps/78130>
 
-If you are currently using a Yext sandbox account, you can install the WordPress Post Connector here <https://sandbox.yext.com/s/me/apps/147473>.
+If you are currently using a Yext sandbox account, you can install the Bizzabo Event Connector here <https://sandbox.yext.com/s/me/apps/147473>.
 
 If you are not an existing customer, but interested in learning more, try out a free trial here for a production account, or sign up for Hitchhikers and get started with a sandbox account, here <https://hitchhikers.yext.com/>. 
 
