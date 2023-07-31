@@ -1,6 +1,6 @@
 {
     "$id": "bizzabo_eventConnector",
-    "$schema": "https://schema.yext.com/config/km/connector/v3",
+    "$schema": "https://schema.yext.com/config/km/connector/v4",
     "displayName": "Bizzabo Event Connector",
     "entityTypes": [
         "event"
